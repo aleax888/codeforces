@@ -23,6 +23,8 @@ Every line of code here is a small victory.
 ---
 
 ## 🎨 ASCII Art
+
+```text
     _____           
    / ____|_     _   
   | |   _| |_ _| |_ 
