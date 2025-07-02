@@ -1,0 +1,8 @@
+# Ignorar archivo de entorno
+.env
+
+# Ignorar archivo de plantilla
+template.txt
+
+# Ignorar configuración de VS Code
+.vscode/
