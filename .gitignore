@@ -1,8 +1,12 @@
-# Ignorar archivo de entorno
+# ignore c++ exe
 exe
 
-# Ignorar archivo de plantilla
+# ignore vscode c++ settings
+.vscode/
+
+# ignore c++ script template
 template.txt
 
-# Ignorar configuración de VS Code
-.vscode/
+# ignore .sh autos
+git_push.sh
+create_script.sh
