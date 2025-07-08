@@ -8,6 +8,7 @@ It's a personal space to track my progress, stay consistent, and grow one step a
 
 ## 🔧 About
 
+```text
 - Language           : **C++**
 - Folder structure   : The solutions are wrapped by difficulty
 - template.txt       : Base code for C++ script (no <bits/stdc++.h>)
