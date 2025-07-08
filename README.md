@@ -8,8 +8,11 @@ It's a personal space to track my progress, stay consistent, and grow one step a
 
 ## 🔧 About
 
-- 📌 Language         : **C++**
-- 🧪 Folder structure : The solutions are wrapped by difficulty
+- Language           : **C++**
+- Folder structure   : The solutions are wrapped by difficulty
+- template.txt       : Base code for C++ script (no <bits/stdc++.h>)
+- create_script.sh   : Create a new C++ script with copying templete
+- push_new_solutions : Push new scripts building an auto commit message 
 
 ---
 
