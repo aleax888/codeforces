@@ -3,10 +3,3 @@ exe
 
 # ignore vscode c++ settings
 .vscode/
-
-# ignore c++ script template
-template.txt
-
-# ignore .sh autos
-git_push.sh
-create_script.sh
