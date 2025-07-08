@@ -22,7 +22,7 @@ while read -r FILE; do
     FOLDER_NAME=$(basename "$(dirname "$FILE")")
     
     # concatenate to commit message
-    COMMIT_MSG+="\n- $SCRIPT_NAME ($FOLDER_NAME)"
+    COMMIT_MSG+=" - $SCRIPT_NAME ($FOLDER_NAME)"
 done <<< "$FILES"
 
 # commit files with builded message
