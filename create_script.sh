@@ -1,20 +1,19 @@
 #!/bin/bash
 
-# Verificar que se pasaron exactamente 2 argumentos
+# are there 2 arguments?
 if [ "$#" -ne 2 ]; then
-  echo "Uso: $0 <nombre_carpeta> <nombre_archivo>"
+  echo "Use: $0 <nombre_carpeta> <nombre_archivo>"
   exit 1
 fi
 
-# Asignar argumentos a variables
 FOLDER_NAME="$1"
 SCRIPT_NAME="$2"
 
-# Crear la carpeta si no existe
+# create folder if it doesn't exist
 mkdir -p "$FOLDER_NAME"
 
-# Copiar contenido de template.txt al nuevo archivo dentro de la carpeta
+# copy script template into new script
 cat template.txt >> "${FOLDER_NAME}/${SCRIPT_NAME}.cpp"
 
-# Abrir el archivo con Visual Studio Code
+# open new script
 code "${FOLDER_NAME}/${SCRIPT_NAME}.cpp"

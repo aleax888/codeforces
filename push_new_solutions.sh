@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# add all files to stage
 git add .
 
 # get Added files
@@ -24,5 +25,8 @@ while read -r FILE; do
     COMMIT_MSG+="\n- $SCRIPT_NAME ($FOLDER_NAME)"
 done <<< "$FILES"
 
+# commit files with builded message
 git commit -m "$COMMIT_MSG"
+
+# push files
 git push
