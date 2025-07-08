@@ -14,7 +14,7 @@ It's a personal space to track my progress, stay consistent, and grow one step a
 - template.txt       : Base code for C++ script (no <bits/stdc++.h>)
 - create_script.sh   : Create a new C++ script with copying templete
 - push_new_solutions : Push new scripts building an auto commit message 
-```text
+```
 
 ---
 
@@ -37,4 +37,4 @@ Every line of code here is a small victory.
        ____________\///\\\______________\/\\\_________\/\\\_____  
         ______________\////\\\\\\\\\_____\///__________\///______ 
          _________________\/////////______________________________
-```text
+```
