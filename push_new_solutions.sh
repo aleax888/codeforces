@@ -3,7 +3,7 @@
 # add all files to stage
 git add .
 
-# get Added files
+# get added files
 FILES=$(git diff --cached --diff-filter=A --name-only)
 
 # are there new files?
