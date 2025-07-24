@@ -2,14 +2,14 @@
 
 # Are there 2 arguments?
 if [ "$#" -ne 2 ]; then
-  echo "Uso: $0 <nombre_carpeta> <nombre_archivo>"
+  echo "Use: $0 <nombre_carpeta> <nombre_archivo>"
   exit 1
 fi
 
 FOLDER_NAME="$1"
 SCRIPT_NAME="$2"
 
-# Replace invalid Windows characters in the script name
+# Replace special characters in the script name
 SCRIPT_NAME_SAFE=$(echo "$SCRIPT_NAME" | sed 's/[<>:"\/\\|?*]/_/g')
 
 # Create folder if it doesn't exist

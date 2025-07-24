@@ -1,32 +1,32 @@
 #!/bin/bash
 
-# add all files to stage
+# Add all files to stage
 git add .
 
-# get added files
+# Get added files
 FILES=$(git diff --cached --diff-filter=A --name-only)
 
-# are there new files?
+# Are there new files?
 if [ -z "$FILES" ]; then
   echo "There aren't new solutions."
   exit 0
 fi
 
-# build commit message
+# Build commit message
 COMMIT_MSG="new solutions:"
 while read -r FILE; do
-    # get problem name
+    # Get problem name
     SCRIPT_NAME=$(basename "$FILE" | sed 's/\.[^.]*$//')
     
-    # get problem difficulty
+    # Fet problem difficulty
     FOLDER_NAME=$(basename "$(dirname "$FILE")")
     
-    # concatenate to commit message
+    # Concatenate to commit message
     COMMIT_MSG+=" - $SCRIPT_NAME ($FOLDER_NAME)"
 done <<< "$FILES"
 
-# commit files with builded message
+# Commit files with builded message
 git commit -m "$COMMIT_MSG"
 
-# push files
+# Push files
 git push
