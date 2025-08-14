@@ -3,3 +3,6 @@ exe
 
 # ignore vscode c++ settings
 .vscode/
+
+# ignore unrated folder
+.unrated/
