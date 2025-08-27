@@ -2,7 +2,7 @@
 
 # Are there 2 arguments?
 if [ "$#" -ne 2 ]; then
-  echo "Use: $0 <nombre_carpeta> <nombre_archivo>"
+  echo "Use: $0 <folder_name> <file_name>"
   exit 1
 fi
 
