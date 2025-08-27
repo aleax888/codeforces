@@ -3,7 +3,7 @@
 # Add all files to stage
 git add .
 
-# Get added files
+# Get added files (new only)
 FILES=$(git diff --cached --diff-filter=A --name-only)
 
 # Are there new files?
@@ -12,21 +12,34 @@ if [ -z "$FILES" ]; then
   exit 0
 fi
 
-# Build commit message
-COMMIT_MSG="new solutions:"
+# Count number of new solutions
+NUM_SOLUTIONS=$(echo "$FILES" | wc -l | tr -d ' ')
+
+# Title
+COMMIT_TITLE="+$NUM_SOLUTIONS solutions"
+
+# Body: list of files
+COMMIT_BODY=""
 while read -r FILE; do
-    # Get problem name
+    # Get file name without extension
     SCRIPT_NAME=$(basename "$FILE" | sed 's/\.[^.]*$//')
-    
-    # Fet problem difficulty
+
+    # Get folder name (used as difficulty)
     FOLDER_NAME=$(basename "$(dirname "$FILE")")
-    
-    # Concatenate to commit message
-    COMMIT_MSG+=" - $SCRIPT_NAME ($FOLDER_NAME)"
+
+    # Append formatted line
+    COMMIT_BODY+="● $SCRIPT_NAME ($FOLDER_NAME)\n"
 done <<< "$FILES"
 
-# Commit files with builded message
-git commit -m "$COMMIT_MSG"
+# Optional extra message from argument (if present)
+EXTRA_MSG="$1"
+if [ -n "$EXTRA_MSG" ]; then
+    COMMIT_BODY+="\n$EXTRA_MSG\n"
+fi
 
-# Push files
+# Final commit message
+git commit -m "$COMMIT_TITLE" -m "$(echo -e "$COMMIT_BODY")"
+
+# Push
 git push
+       
