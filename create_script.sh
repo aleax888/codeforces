@@ -16,7 +16,7 @@ SCRIPT_NAME_SAFE=$(echo "$SCRIPT_NAME" | sed 's/[<>:"\/\\|?*]/_/g')
 mkdir -p "$FOLDER_NAME"
 
 # Copy script template into new script
-cat template.txt >> "${FOLDER_NAME}/${SCRIPT_NAME_SAFE}.cpp"
+cat template.cpp >> "${FOLDER_NAME}/${SCRIPT_NAME_SAFE}.cpp"
 
 # Open new script
 code "${FOLDER_NAME}/${SCRIPT_NAME_SAFE}.cpp"
