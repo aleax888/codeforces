@@ -5,11 +5,11 @@ int main()
 {
     int t, ans;
     cin >> t;
-    for (size_t test_case_i = 0; test_case_i < t; test_case_i++)
+    while (t--)
     {
-        // code
-        cout << ans;
+        // {{  solution  }}
+        cout << ans << endl;
     }
 }
 
-// << link >>
+// {{  link  }}
