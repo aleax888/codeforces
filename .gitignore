@@ -5,4 +5,4 @@ exe
 .vscode/
 
 # ignore unrated folder
-unrated/
+solutions/unrated/
