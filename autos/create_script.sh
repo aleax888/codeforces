@@ -19,6 +19,7 @@ LINK_ARG="{{ URL }}"
 MULTI_ARG=true
 YESNO_ARG=false
 FASTIO_ARG=true
+MARK_AS_LAST_ARG=true
 
 ############################################
 # Helper: console color logger
@@ -37,16 +38,17 @@ Usage:
   $0 [folder] [script] [-f folder] [-s script] [--single] [--yesno] [--no-fastio] [--link url]
 
 Positional arguments:
-  folder       Output folder (equal to -f)
-  script       File name without extension (equal to -s)
+  folder          Output folder (equal to -f)
+  script          File name without extension (equal to -s)
 
 Flags:
-  -f folder    Output folder (overrides positional argument)
-  -s script    File name without extension (overrides positional argument)
-  --link url   Insert problem link as comment
-  --single     Generate template with single testcase (default: multiple)
-  --yesno      Enable yes/no answer snippet
-  --no-fastio  Disable fast I/O snippet
+  -f folder       Output folder (overrides positional argument)
+  -s script       File name without extension (overrides positional argument)
+  --link url      Insert problem link as comment
+  --single        Generate template with single testcase (default: multiple)
+  --yesno         Enable yes/no answer snippet
+  --no-fastio     Disable fast I/O snippet
+  --mark_as_last  Save the path as last script created
 EOF
   exit 1
 }
@@ -203,6 +205,14 @@ OUTPUT="${OUTPUT//\{\{SOLUTION_PLACEHOLDER\}\}/$SOLUTION_PLACEHOLDER}"
 printf '%s\n' "$OUTPUT" > "$OUTPUT_PATH"
 RELATIVE_PATH=$(realpath "$OUTPUT_PATH")
 ok "Generated at: $RELATIVE_PATH"
+
+############################################
+# Save path as last script
+############################################
+
+if [ "$MARK_AS_LAST_ARG" = true ]; then
+  echo "$RELATIVE_PATH" > "$SCRIPT_DIR/last_script_path.txt"
+fi
 
 ############################################
 # Open in VS Code
