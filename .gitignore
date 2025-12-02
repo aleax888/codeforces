@@ -6,3 +6,6 @@ exe
 
 # ignore unrated folder
 solutions/unrated/
+
+# ignore last script created mark
+autos/last_script_path.txt
